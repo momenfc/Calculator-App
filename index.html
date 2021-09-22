@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- displays site properly based on user's device -->
+    <link rel="stylesheet" href="style/style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Calculator app</title>
+  </head>
+  <body>
+    <div class="calculator">
+      <div class="container">
+        <div class="calculator-head">
+          <h4 class="brand">memo</h4>
+          <div class="theme">
+            <button data-target="0" class="theme-btn">theme</button>
+            <div class="theme-control">
+              <div class="theme-control-btns">
+                <span>1</span><span>2</span><span>3</span>
+              </div>
+              <div class="theme-control-mark">
+                <span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="calculator-screen">
+          <div class="prev-value">123 +</div>
+          <div class="current-value">958</div>
+        </div>
+        <div class="calculator-control">
+          <button data-target="7">7</button>
+          <button data-target="8">8</button>
+          <button data-target="9">9</button>
+          <button data-target="del" class="text">del</button>
+          <button data-target="4">4</button>
+          <button data-target="5">5</button>
+          <button data-target="6">6</button>
+          <button data-target="+">+</button>
+          <button data-target="1">1</button>
+          <button data-target="2">2</button>
+          <button data-target="3">3</button>
+          <button data-target="-">-</button>
+          <button data-target=".">.</button>
+          <button data-target="0">0</button>
+          <button data-target="/">/</button>
+          <button data-target="*">×</button>
+          <button data-target="reset" class="col-2 text">ac</button>
+          <button data-target="=" class="col-2 c-red">=</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

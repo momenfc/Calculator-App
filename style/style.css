@@ -1,0 +1,460 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  width: 100%;
+  font-family: Rubik, sans-serif;
+  font-size: 62.5%;
+  background-color: papayawhip;
+}
+
+.calculator {
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  background-color: #3b4664;
+}
+
+.calculator.theme-light {
+  background-color: #e6e6e6;
+}
+
+.calculator.theme-dark {
+  background-color: #17062a;
+}
+
+.calculator .container {
+  width: 100%;
+  max-width: 30rem;
+}
+
+@media screen and (max-width: 500px) {
+  .calculator .container {
+    max-width: 20rem;
+  }
+}
+
+.calculator-head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media screen and (max-width: 500px) {
+  .calculator-head {
+    padding: 0 1rem;
+  }
+}
+
+.calculator-head .brand {
+  font-size: 2rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #eae3db;
+  letter-spacing: 2px;
+}
+
+@media screen and (max-width: 500px) {
+  .calculator-head .brand {
+    font-size: 1.8rem;
+  }
+}
+
+.theme-light .calculator-head .brand {
+  color: #303028;
+}
+
+.theme-dark .calculator-head .brand {
+  color: #eed727;
+}
+
+.calculator-head .theme {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+
+.calculator-head .theme-btn {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #eae3db;
+  cursor: pointer;
+}
+
+.theme-light .calculator-head .theme-btn {
+  color: #303028;
+}
+
+.theme-dark .calculator-head .theme-btn {
+  color: #eed727;
+}
+
+.calculator-head .theme-control {
+  width: 3.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.1rem;
+}
+
+.calculator-head .theme-control-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 0.4rem;
+}
+
+.calculator-head .theme-control-btns span {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #eae3db;
+}
+
+.theme-light .calculator-head .theme-control-btns span {
+  color: #303028;
+}
+
+.theme-dark .calculator-head .theme-control-btns span {
+  color: #eed727;
+}
+
+.calculator-head .theme-control-mark {
+  background-color: #252d44;
+  border-radius: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 1.4rem;
+  padding: 0.3rem;
+}
+
+.theme-light .calculator-head .theme-control-mark {
+  background-color: #d3cdcd;
+}
+
+.theme-dark .calculator-head .theme-control-mark {
+  background-color: #1e0836;
+}
+
+.calculator-head .theme-control-mark span {
+  width: 1rem;
+  height: 1rem;
+  display: inline-block;
+  background-color: #d13f30;
+  border-radius: 50%;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
+}
+
+.theme-light .calculator-head .theme-control-mark span {
+  background-color: #c85401;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.theme-dark .calculator-head .theme-control-mark span {
+  background-color: #00decf;
+  -webkit-transform: translateX(200%);
+          transform: translateX(200%);
+}
+
+.calculator-screen {
+  background-color: #181f32;
+  margin: 1.5rem 0;
+  padding: 1.5rem 2rem;
+  min-height: 8.4rem;
+  border-radius: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+@media screen and (max-width: 500px) {
+  .calculator-screen {
+    padding: 1.2rem;
+  }
+}
+
+.calculator-screen .prev-value {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #bdbdbd;
+  letter-spacing: 1px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+@media screen and (max-width: 500px) {
+  .calculator-screen .prev-value {
+    font-size: 1.2rem;
+  }
+}
+
+.theme-light .calculator-screen .prev-value {
+  color: #44443b;
+}
+
+.theme-dark .calculator-screen .prev-value {
+  color: #c2a61d;
+}
+
+.calculator-screen .current-value {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+@media screen and (max-width: 500px) {
+  .calculator-screen .current-value {
+    font-size: 2.4rem;
+  }
+}
+
+.theme-light .calculator-screen .current-value {
+  color: #34342a;
+}
+
+.theme-dark .calculator-screen .current-value {
+  color: #fcdf45;
+}
+
+.theme-light .calculator-screen {
+  background-color: #eeeeee;
+}
+
+.theme-dark .calculator-screen {
+  background-color: #1e0836;
+}
+
+.calculator-control {
+  padding: 2rem;
+  border-radius: 1rem;
+  background-color: #252d44;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(3rem, 1fr))[4];
+      grid-template-columns: repeat(4, minmax(3rem, 1fr));
+  gap: 1.2rem;
+}
+
+@media screen and (max-width: 500px) {
+  .calculator-control {
+    padding: 1rem;
+    -ms-grid-columns: (minmax(2rem, 1fr))[4];
+        grid-template-columns: repeat(4, minmax(2rem, 1fr));
+    gap: 0.8rem;
+  }
+}
+
+.theme-light .calculator-control {
+  background-color: #d3cdcd;
+}
+
+.theme-dark .calculator-control {
+  background-color: #1e0836;
+}
+
+.calculator-control button {
+  border: none;
+  outline: none;
+  background-color: #eae3db;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #252d44;
+  border-radius: 0.8rem;
+  padding: 0.7rem 0.5rem;
+  -webkit-box-shadow: 0 0.3rem 0 #b5a49a;
+          box-shadow: 0 0.3rem 0 #b5a49a;
+  cursor: pointer;
+  -webkit-transition: 0.1s ease-out;
+  transition: 0.1s ease-out;
+}
+
+@media screen and (max-width: 500px) {
+  .calculator-control button {
+    font-size: 2rem;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    -webkit-box-shadow: 0 0.2rem 0 #b5a49a;
+            box-shadow: 0 0.2rem 0 #b5a49a;
+  }
+}
+
+.theme-light .calculator-control button {
+  background-color: #e5e4e0;
+  color: #303024;
+  -webkit-box-shadow: 0 0.3rem 0 #a79d91;
+          box-shadow: 0 0.3rem 0 #a79d91;
+}
+
+@media screen and (max-width: 500px) {
+  .theme-light .calculator-control button {
+    -webkit-box-shadow: 0 0.1rem 0 #a79d91;
+            box-shadow: 0 0.1rem 0 #a79d91;
+  }
+}
+
+.theme-dark .calculator-control button {
+  background-color: #331b4d;
+  color: #eed727;
+  -webkit-box-shadow: 0 0.3rem 0 #86209d;
+          box-shadow: 0 0.3rem 0 #86209d;
+}
+
+@media screen and (max-width: 500px) {
+  .theme-dark .calculator-control button {
+    -webkit-box-shadow: 0 0.1rem 0 #86209d;
+            box-shadow: 0 0.1rem 0 #86209d;
+  }
+}
+
+.calculator-control button:active {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: translateY(0.3rem);
+          transform: translateY(0.3rem);
+}
+
+@media screen and (max-width: 500px) {
+  .calculator-control button:active {
+    -webkit-transform: translateY(0.1rem);
+            transform: translateY(0.1rem);
+  }
+}
+
+.calculator-control .col-2 {
+  grid-column: span 2;
+}
+
+.calculator-control .text {
+  font-size: 1.6rem;
+  color: #eae3db;
+  background-color: #647299;
+  -webkit-box-shadow: 0 0.3rem 0 #414d75;
+          box-shadow: 0 0.3rem 0 #414d75;
+}
+
+@media screen and (max-width: 500px) {
+  .calculator-control .text {
+    font-size: 1.2rem;
+  }
+}
+
+.theme-light .calculator-control .text {
+  color: #eae3db;
+  background-color: #388187;
+  -webkit-box-shadow: 0 0.3rem 0 #1b6065;
+          box-shadow: 0 0.3rem 0 #1b6065;
+}
+
+@media screen and (max-width: 500px) {
+  .theme-light .calculator-control .text {
+    -webkit-box-shadow: 0 0.1rem 0 #1b6065;
+            box-shadow: 0 0.1rem 0 #1b6065;
+  }
+}
+
+.theme-dark .calculator-control .text {
+  color: #eae3db;
+  background-color: #56077c;
+  -webkit-box-shadow: 0 0.3rem 0 #b21ee4;
+          box-shadow: 0 0.3rem 0 #b21ee4;
+}
+
+@media screen and (max-width: 500px) {
+  .theme-dark .calculator-control .text {
+    -webkit-box-shadow: 0 0.1rem 0 #b21ee4;
+            box-shadow: 0 0.1rem 0 #b21ee4;
+  }
+}
+
+.calculator-control .c-red {
+  color: #eae3db;
+  background-color: #d13f30;
+  -webkit-box-shadow: 0 0.3rem 0 #8f2316;
+          box-shadow: 0 0.3rem 0 #8f2316;
+}
+
+.theme-light .calculator-control .c-red {
+  color: #eae3db;
+  background-color: #c85401;
+  -webkit-box-shadow: 0 0.3rem 0 #8f2316;
+          box-shadow: 0 0.3rem 0 #8f2316;
+}
+
+.theme-dark .calculator-control .c-red {
+  color: #e6e6e6;
+  background-color: #01ddd1;
+  -webkit-box-shadow: 0 0.3rem 0 #6cf8ef;
+          box-shadow: 0 0.3rem 0 #6cf8ef;
+}
+
+@media screen and (max-width: 500px) {
+  .calculator-control .c-red {
+    -webkit-box-shadow: 0 0.1rem 0 #8f2316;
+            box-shadow: 0 0.1rem 0 #8f2316;
+  }
+  .theme-light .calculator-control .c-red {
+    -webkit-box-shadow: 0 0.1rem 0 #8f2316;
+            box-shadow: 0 0.1rem 0 #8f2316;
+  }
+  .theme-dark .calculator-control .c-red {
+    -webkit-box-shadow: 0 0.1rem 0 #6cf8ef;
+            box-shadow: 0 0.1rem 0 #6cf8ef;
+  }
+}
+/*# sourceMappingURL=style.css.map */
